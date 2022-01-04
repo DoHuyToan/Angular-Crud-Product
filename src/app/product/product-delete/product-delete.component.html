@@ -1,1 +1,29 @@
-<p>product-delete works!</p>
+<a routerLink="">Return List of Products</a>
+<br>
+<br>
+<h1>Delete Product???</h1>
+<form (ngSubmit)="deleteProduct()">
+  <table>
+    <tr>
+      <td>id</td>
+      <input [(ngModel)]="product.id" name="id" readonly>
+    </tr>
+    <tr>
+      <td>name</td>
+      <input [(ngModel)]="product.name" name="name" readonly>
+    </tr>
+    <tr>
+      <td>id</td>
+      <input [(ngModel)]="product.price" name="price" readonly>
+    </tr>
+    <tr>
+      <td>id</td>
+      <input [(ngModel)]="product.description" name="description" readonly>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit">Delete</button>
+      </td>
+    </tr>
+  </table>
+</form>

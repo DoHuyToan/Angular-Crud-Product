@@ -23,7 +23,6 @@ const routes: Routes = [
     component: ProductDeleteComponent
   },
 
-
 ];
 
 @NgModule({

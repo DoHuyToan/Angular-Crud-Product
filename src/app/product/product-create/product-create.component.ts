@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../product';
-import {ProductService} from '../../product.service';
+import {Product} from '../model/product';
+import {ProductService} from '../service/product.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-product-create',
@@ -9,11 +10,12 @@ import {ProductService} from '../../product.service';
 })
 export class ProductCreateComponent implements OnInit {
 
-  product: Product = {
-    id: 0,
-    name: '',
-    description: ''
-  };
+  productForm: FormGroup = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+    description: new FormControl(),
+    price: new FormControl()
+  });
 
   constructor(
     private productService: ProductService
@@ -22,8 +24,10 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createNewProduct(){
-    this.productService.createNewProduct(this.product);
+  // tslint:disable-next-line:typedef
+  submit(){
+    const product = this.productForm.value;
+    this.productService.createNewProduct(product);
+    this.productForm.reset();
   }
-
 }

@@ -5,13 +5,20 @@
 <table border="1" cellpadding="5">
   <thead>
   <tr style="background: greenyellow">
+    <th>Stt</th>
     <th>Name</th>
     <th>Description</th>
+    <th>Price</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
   </thead>
-  <tr *ngFor="let product of getAllProducts()">
+  <tr *ngFor="let product of productList; index as i">
+    <td>{{i+1}}</td>
     <td>{{product.name}}</td>
     <td>{{product.description}}</td>
-    <td><a routerLink="/update/{{product.id}}">Update</a></td>
+    <td>{{product.price}}</td>
+    <td><a routerLink="/update/{{product.id}}">Edit</a></td>
+    <td><a routerLink="/delete/{{product.id}}">Delete</a></td>
   </tr>
 </table>
