@@ -1,0 +1,11 @@
+<a routerLink="">Return List of Products</a>
+<br>
+<br>
+<form  (ngSubmit)="updateProductById()">
+  <input type="text" [(ngModel)]="product.id" name="id" id="id" hidden>
+  <label for="name">Name</label>
+  <input type="text" [(ngModel)]="product.name" name="name" id="name">
+  <label for="description">Description</label>
+  <input type="text" [(ngModel)]="product.description" name="description" id="description">
+  <button type="submit">Update</button>
+</form>

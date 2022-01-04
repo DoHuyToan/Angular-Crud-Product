@@ -1,0 +1,17 @@
+<a routerLink="/create">Create new product</a>
+<br>
+<br>
+<h1>List of Product</h1>
+<table border="1" cellpadding="5">
+  <thead>
+  <tr style="background: greenyellow">
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let product of getAllProducts()">
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td><a routerLink="/update/{{product.id}}">Update</a></td>
+  </tr>
+</table>
